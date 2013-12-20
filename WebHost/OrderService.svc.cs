@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using log4net;
 using WebHost.Dao;
 using WebHost.Interfaces;
 using WebHost.Models;
@@ -15,6 +16,13 @@ namespace WebHost
     public class OrderService : IOrderService
     {
         private CustomerDao _customerDao;
+        private static ILog _logger;
+
+        static OrderService()
+        {
+            _logger = LogManager.GetLogger(typeof(CustomerDao));
+        }
+
         public OrderService()
         {
             _customerDao = new CustomerDao();
@@ -22,7 +30,15 @@ namespace WebHost
 
         public void AddCustomer(Customer customer)
         {
-            _customerDao.SaveCustomer(customer);
+            try
+            {
+                _customerDao.SaveCustomer(customer);
+            }
+            catch (FaultException e)
+            {
+                _logger.Error(e);
+            }
+
         }
 
         public List<Customer> GetCustomers()

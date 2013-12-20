@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.ServiceModel;
 using WebHost.Models;
 
 namespace WebHost.Dao
@@ -9,6 +9,11 @@ namespace WebHost.Dao
     public class CustomerDao
     {
         private OrderDBContext _orderDbContext;
+
+        static CustomerDao()
+        {
+
+        }
 
         public CustomerDao()
         {
@@ -30,7 +35,7 @@ namespace WebHost.Dao
         public void DeleteCustomer(Guid id)
         {
             var customer = _orderDbContext.Customers.FirstOrDefault(x => x.Id == id);
-            if (customer!=null)
+            if (customer != null)
                 _orderDbContext.Customers.Remove(customer);
 
             _orderDbContext.SaveChanges();
