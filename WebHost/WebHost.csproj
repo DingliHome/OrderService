@@ -96,12 +96,7 @@
     <None Include="Properties\PublishProfiles\host.pubxml" />
     <Content Include="log4net.config">
       <SubType>Designer</SubType>
-    </Content>
-    <Content Include="log4net.Debug.config">
-      <DependentUpon>log4net.config</DependentUpon>
-    </Content>
-    <Content Include="log4net.Release.config">
-      <DependentUpon>log4net.config</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -43,12 +43,27 @@ namespace WebHost
 
         public List<Customer> GetCustomers()
         {
-            return _customerDao.GetCustomers();
+            try
+            {
+                return _customerDao.GetCustomers();
+            }
+            catch (FaultException e)
+            {
+                _logger.Error(e);
+                return null;
+            }
         }
 
         public void DeleteCustomer(Guid id)
         {
-            _customerDao.DeleteCustomer(id);
+            try
+            {
+                _customerDao.DeleteCustomer(id);
+            }
+            catch (FaultException e)
+            {
+                _logger.Error(e);
+            }
         }
     }
 }

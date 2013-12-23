@@ -11,6 +11,7 @@ namespace WebHost.Interfaces
     {
         [OperationContract]
         void AddCustomer(Customer customer);
+        [FaultContract(typeof(string))]
         [OperationContract]
         List<Customer> GetCustomers();
         [OperationContract]
