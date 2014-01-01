@@ -4,7 +4,6 @@ using System.Runtime.Serialization;
 
 namespace WebHost.Models
 {
-    [Serializable]
     [DataContract]
     public partial class Customer
     {
@@ -27,7 +26,8 @@ namespace WebHost.Models
         public Nullable<System.DateTime> LastLogonTime { get; set; }
         [DataMember]
         public string IP { get; set; }
-        [DataMember]
+        [IgnoreDataMember]
+        //[DataMember]
         public virtual ICollection<Order> Orders { get; set; }
     }
 }

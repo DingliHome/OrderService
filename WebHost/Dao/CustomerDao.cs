@@ -12,12 +12,13 @@ namespace WebHost.Dao
 
         static CustomerDao()
         {
-
+            
         }
 
         public CustomerDao()
         {
             _orderDbContext = new OrderDBContext();
+            //_orderDbContext.Configuration.ProxyCreationEnabled = false;
         }
 
         public List<Customer> GetCustomers()

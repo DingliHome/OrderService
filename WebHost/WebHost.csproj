@@ -78,6 +78,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dao\CustomerDao.cs" />
+    <Compile Include="Dao\OrderDao.cs" />
+    <Compile Include="Dao\RestaurantDao.cs" />
     <Compile Include="Interfaces\IOrderService.cs" />
     <Compile Include="Entities\Customer.cs" />
     <Compile Include="Models\Mapping\CustomerMap.cs" />

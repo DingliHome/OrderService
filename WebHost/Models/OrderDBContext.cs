@@ -8,7 +8,7 @@ namespace WebHost.Models
     {
         static OrderDBContext()
         {
-            Database.SetInitializer<OrderDBContext>(new DropCreateDatabaseIfModelChanges<OrderDBContext>());
+           // Database.SetInitializer<OrderDBContext>(new DropCreateDatabaseAlways<OrderDBContext>());
         }
 
         public OrderDBContext()

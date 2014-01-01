@@ -16,6 +16,9 @@ namespace WebHost
     public class OrderService : IOrderService
     {
         private CustomerDao _customerDao;
+        private OrderDao _orderDao;
+        private RestaurantDao _restaurantDao;
+
         private static ILog _logger;
 
         static OrderService()
@@ -26,6 +29,8 @@ namespace WebHost
         public OrderService()
         {
             _customerDao = new CustomerDao();
+            _orderDao=new OrderDao();
+            _restaurantDao=new RestaurantDao();
         }
 
         public void AddCustomer(Customer customer)
@@ -64,6 +69,36 @@ namespace WebHost
             {
                 _logger.Error(e);
             }
+        }
+
+        public void AddOrder(Order order)
+        {
+            _orderDao.SaveOrder(order);
+        }
+
+        public List<Order> GetOrders()
+        {
+            return _orderDao.GetOrders();
+        }
+
+        public void DeleteOrder(Guid id)
+        {
+            _orderDao.DeleteOrder(id);
+        }
+
+        public void AddRestaurant(Restaurant restaurant)
+        {
+            _restaurantDao.SaveRestaurant(restaurant);
+        }
+
+        public List<Restaurant> GetRestaurants()
+        {
+            return _restaurantDao.GetRestaurants();
+        }
+
+        public void DeleteRestaurant(Guid id)
+        {
+            _restaurantDao.DeleteRestaurant(id);
         }
     }
 }

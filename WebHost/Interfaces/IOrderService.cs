@@ -9,12 +9,31 @@ namespace WebHost.Interfaces
     [ServiceContract]
     public interface IOrderService
     {
+        #region Customer
         [OperationContract]
         void AddCustomer(Customer customer);
-        [FaultContract(typeof(string))]
         [OperationContract]
         List<Customer> GetCustomers();
         [OperationContract]
         void DeleteCustomer(Guid id);
+        #endregion
+
+        #region Order
+        [OperationContract]
+        void AddOrder(Order order);
+        [OperationContract]
+        List<Order> GetOrders();
+        [OperationContract]
+        void DeleteOrder(Guid id);
+        #endregion
+
+        #region Restaurant
+        [OperationContract]
+        void AddRestaurant(Restaurant restaurant);
+        [OperationContract]
+        List<Restaurant> GetRestaurants();
+        [OperationContract]
+        void DeleteRestaurant(Guid id);
+        #endregion
     }
 }

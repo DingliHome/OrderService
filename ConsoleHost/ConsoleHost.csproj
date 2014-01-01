@@ -60,26 +60,31 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Service References\ServiceAPIS\OrderService.wsdl" />
-    <None Include="Service References\ServiceAPIS\OrderService.xsd">
+    <None Include="Service References\ServiceAPIS\ConsoleHost.ServiceAPIS.Customer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceAPIS\ConsoleHost.ServiceAPIS.Order.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceAPIS\ConsoleHost.ServiceAPIS.Restaurant.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceAPIS\OrderService1.wsdl" />
+    <None Include="Service References\ServiceAPIS\OrderService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceAPIS\OrderService1.xsd">
+    <None Include="Service References\ServiceAPIS\OrderService31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceAPIS\OrderService2.xsd">
+    <None Include="Service References\ServiceAPIS\OrderService32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="WebHost.Models.Customer.datasource" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceAPIS\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceAPIS\OrderService.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ServiceAPIS\configuration91.svcinfo" />
@@ -92,6 +97,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceAPIS\OrderService1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

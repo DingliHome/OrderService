@@ -1,4 +1,5 @@
 ﻿using System;
+using ConsoleHost.ServiceAPIS;
 using WebHost.Models;
 
 namespace ConsoleHost
@@ -7,8 +8,12 @@ namespace ConsoleHost
     {
         static void Main(string[] args)
         {
-            var client = new ServiceAPIS.OrderServiceClient();
-            client.GetCustomers();
+            var client = new OrderServiceClient();
+            //client.AddCustomer(new Customer() { Id = Guid.NewGuid(), Name = "dingli" });
+
+            var customers = client.GetCustomers();
+
+
         }
     }
 }
