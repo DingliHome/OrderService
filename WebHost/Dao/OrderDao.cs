@@ -12,7 +12,6 @@ namespace WebHost.Dao
         public OrderDao()
         {
             _orderDbContext = new OrderDBContext();
-            _orderDbContext.Configuration.ProxyCreationEnabled = false;
         }
 
         public List<Order> GetOrders()

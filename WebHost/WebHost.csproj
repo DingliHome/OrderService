@@ -77,6 +77,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\ApplyProxyDataContractResolverAttribute.cs" />
+    <Compile Include="Common\ProxyDataContractResolver.cs" />
     <Compile Include="Dao\CustomerDao.cs" />
     <Compile Include="Dao\OrderDao.cs" />
     <Compile Include="Dao\RestaurantDao.cs" />

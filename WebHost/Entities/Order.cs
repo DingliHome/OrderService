@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 
 namespace WebHost.Models
 {
-    [DataContract]
+    [DataContract(IsReference = true)]
     public partial class Order
     {
         [DataMember]

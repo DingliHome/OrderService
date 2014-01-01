@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ServiceModel;
+using WebHost.Common;
 using WebHost.Models;
 
 namespace WebHost.Interfaces
@@ -13,6 +14,7 @@ namespace WebHost.Interfaces
         [OperationContract]
         void AddCustomer(Customer customer);
         [OperationContract]
+        [ApplyProxyDataContractResolver]
         List<Customer> GetCustomers();
         [OperationContract]
         void DeleteCustomer(Guid id);
@@ -22,6 +24,7 @@ namespace WebHost.Interfaces
         [OperationContract]
         void AddOrder(Order order);
         [OperationContract]
+        [ApplyProxyDataContractResolver]
         List<Order> GetOrders();
         [OperationContract]
         void DeleteOrder(Guid id);

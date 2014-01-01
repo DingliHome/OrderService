@@ -12,7 +12,6 @@ namespace WebHost.Dao
         public RestaurantDao()
         {
             _orderDbContext = new OrderDBContext();
-            _orderDbContext.Configuration.ProxyCreationEnabled = false;
         }
 
         public List<Restaurant> GetRestaurants()

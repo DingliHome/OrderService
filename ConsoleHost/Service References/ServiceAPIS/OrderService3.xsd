@@ -12,6 +12,8 @@
       <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RegisterTime" nillable="true" type="xs:dateTime" />
     </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
   </xs:complexType>
   <xs:element name="Customer" nillable="true" type="tns:Customer" />
   <xs:complexType name="ArrayOfOrder">
@@ -28,6 +30,8 @@
       <xs:element minOccurs="0" name="Restaurant" nillable="true" type="tns:Restaurant" />
       <xs:element minOccurs="0" name="RestaurantId" type="ser:guid" />
     </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
   </xs:complexType>
   <xs:element name="Order" nillable="true" type="tns:Order" />
   <xs:complexType name="Restaurant">
@@ -47,6 +51,8 @@
       <xs:element minOccurs="0" name="TelPhone" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
     </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
   </xs:complexType>
   <xs:element name="Restaurant" nillable="true" type="tns:Restaurant" />
   <xs:complexType name="ArrayOfCustomer">

@@ -14,7 +14,7 @@ namespace WebHost.Models
         public OrderDBContext()
             : base("Name=OrderDBContext")
         {
-          
+            //this.Configuration.ProxyCreationEnabled = false;
         }
 
         public DbSet<Customer> Customers { get; set; }
